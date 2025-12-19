@@ -113,7 +113,7 @@ If you are using Termux on Android, editing files can be tricky. Please follow t
 **只需一步！复制下面的整段指令，在 Termux 中长按粘贴并回车：**
 
 ```bash
-cd ~/SillyTavern/plugins && git clone [https://github.com/SenriYuki/TavernBackupAssistant.git](https://github.com/SenriYuki/TavernBackupAssistant.git) && cd TavernBackupAssistant && npm install && echo "Plugin Installed! Please Restart ST. (安装完成，请重启酒馆)"
+cd ~/SillyTavern/plugins && git clone https://github.com/SenriYuki/TavernBackupAssistant.git && cd TavernBackupAssistant && npm install && echo "Plugin Installed! Please Restart ST. (安装完成，请重启酒馆)"
 ```
 
 ### 💻 PC (Windows/Linux)
@@ -121,7 +121,7 @@ cd ~/SillyTavern/plugins && git clone [https://github.com/SenriYuki/TavernBackup
 
 ```bash
 cd plugins
-git clone [https://github.com/SenriYuki/TavernBackupAssistant.git](https://github.com/SenriYuki/TavernBackupAssistant.git)
+git clone https://github.com/SenriYuki/TavernBackupAssistant.git
 cd TavernBackupAssistant
 npm install
 ```
@@ -137,6 +137,7 @@ npm install
 ### Q: Upload failed / Network Error? (上传失败/网络错误？)
   A: You likely forgot to set disableCsrfProtection: true.
   (你大概率忘记将 disableCsrfProtection 设为 true 了。)
+
 
 
 
