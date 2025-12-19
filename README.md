@@ -130,12 +130,14 @@ npm install
 ---
 
 ## ❓ FAQ (常见问题)
-**Q: I installed it but don't see the plugin? (安装了但看不到插件？)**
+### Q: I installed it but don't see the plugin? (安装了但看不到插件？)**
   A: Did you restart SillyTavern? Did you set enableServerPlugins: true in config.yaml?
   (你重启酒馆了吗？你在 config.yaml 里开启服务端插件权限了吗？)
-**Q: Upload failed / Network Error? (上传失败/网络错误？)**
+### Q: Upload failed / Network Error? (上传失败/网络错误？)**
   A: You likely forgot to set disableCsrfProtection: true.
   (你大概率忘记将 disableCsrfProtection 设为 true 了。)
+
+
 
 
 
