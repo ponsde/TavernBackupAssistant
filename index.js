@@ -271,6 +271,17 @@ function init(app, config) {
                 if (fs.existsSync(path.join(extractDir, 'data'))) {
                     // Type A: Plugin Backup (contains 'data' folder) / 插件备份（包含 data 目录）
                     console.log('[BackupAssistant] Detected Plugin Backup');
+                    
+                    // Safety Check: Remove broken config.yaml if it's too small (e.g. symlink text) / 安全检查：如果配置文件过小（可能是损坏的链接文本），则不还原它
+                    const configPath = path.join(extractDir, 'config.yaml');
+                    if (fs.existsSync(configPath)) {
+                        const stats = fs.statSync(configPath);
+                        if (stats.size < 100) {
+                            console.warn('[BackupAssistant] Skipped restoring suspicious config.yaml (too small)');
+                            fs.unlinkSync(configPath);
+                        }
+                    }
+
                     fsExtra.copySync(extractDir, rootDir, { overwrite: true });
                 } else if (fs.existsSync(path.join(extractDir, 'characters')) || fs.existsSync(path.join(extractDir, 'chats'))) {
                     // Type B: Standard Backup (flat structure) / 标准备份（扁平结构）
